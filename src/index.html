@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовое задание itprofit</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h1>Оставьте ваши контактные данные, и мы с вами свяжемся</h1>
+            <form action="" class="contact-form" id="add-form" name="addForm">
+                <div class="input-wrapper input-wrapper--name">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" placeholder="Введите ваше имя" required>
+                    <p class="error" id="errorLength" style="display: none;">Не менее 2 символов</p>
+                    <p class="error" id="errorCyrillic" style="display: none;">Только кирилица</p>
+                </div>
+                <div class="input-wrapper input-wrapper--email">
+                    <label for="email">E-mail</label>
+                    <input id="email" name="email" type="email" placeholder="например: examlpe@yandex.ru" required>
+                    <p class="error" id="errorEmail" style="display: none;">Неправильный формат email (Пример: examlpe@yandex.ru)</p>
+                </div>
+                <div class="input-wrapper input-wrapper--phone">
+                    <label for="phone">Телефон</label>
+                    <input id="phone" name="phone" type="tel" placeholder="+375 (29) 889-38-93" required>
+                    <p class="error" id="errorPhone" style="display: none;">Неправильный формат телефона</p>
+                </div>
+                <div class="input-wrapper input-wrapper--message">
+                    <label for="message">Сообщение</label>
+                    <textarea name="message" id="message" placeholder="Введите ваше сообщение" required></textarea>
+                    <p class="error" id="errorText" style="display: none;">Минимум 10 символов</p>
+                </div>
+                <div class="input-wrapper input-wrapper--checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" name="terms" id='terms' required>
+                        Соглашаетесь с политикой конфиденциальности?
+                    </label>
+                    <p class="error" id="errorTerms" style="display: none;">Примите соглашение</p>
+                </div>
+                <button type="submit" class="button">Отправить</button>
+            </form>
+
+            <!-- Кнопка для открытия модального окна -->
+        <button id="openModalBtn" class="open-modal-button button">Открыть модальное окно</button>
+
+        <!-- Модальное окно -->
+        <div id="modalOverlay" class="modal-overlay">
+            <div class="modal">
+                <span id="closeModalBtn" class="modal-close">&times;</span>
+                <h2>Модальное окно</h2>
+                <p>Это модальное окно с анимацией и блокировкой прокрутки страницы.</p>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+    <!--закоментировал потому что HtmlWebpackPlugin вставляет сам скрипт
+    инчае запрос на сервер отправляется дважды при нажатии кнопки-->
+    <!-- <script src="bundle.js"></script> -->
+</body>
+</html>

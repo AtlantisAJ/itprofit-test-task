@@ -1,0 +1,49 @@
+/* Общий стиль для модального оверлея */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* затемнение фона */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;  /* Исходное состояние — прозрачное */
+    visibility: hidden; /* Исходное состояние — невидимое */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Плавное отображение */
+}
+/* Активное состояние модального окна */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Стили для самой модалки */
+.modal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    transform: translateY(-30px); /* Исходное смещение вверх */
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Анимация появления */
+    visibility: hidden;
+}
+
+/* Анимация для активного состояния модалки */
+.modal-overlay.active .modal {
+    transform: translateY(0); /* Возвращается в исходное положение */
+    opacity: 1; /* Прозрачность восстанавливается */
+    visibility: visible;
+}
+
+/* Кнопка закрытия */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
